@@ -1,4 +1,4 @@
-%% Copyright (c) 2011-2012 Basho Technologies, Inc.  All Rights Reserved.
+%% Copyright (c) 2011-2014 Basho Technologies, Inc.  All Rights Reserved.
 %%
 %% This file is provided to you under the Apache License,
 %% Version 2.0 (the "License"); you may not use this file
@@ -247,7 +247,7 @@ zone() ->
     LocalTime = calendar:universal_time_to_local_time(Time),
     DiffSecs = calendar:datetime_to_gregorian_seconds(LocalTime) -
         calendar:datetime_to_gregorian_seconds(Time),
-    zone((DiffSecs/3600)*100).
+    zone((DiffSecs div 3600)*100).
 
 %% Ugly reformatting code to get times like +0000 and -1300
 
